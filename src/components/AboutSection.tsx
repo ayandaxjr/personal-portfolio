@@ -1,13 +1,14 @@
 import { motion } from 'motion/react';
 import { Code2, Rocket, Brain } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import Image from 'next/image';
 
 export function AboutSection() {
   const stats = [
     {
       icon: Rocket,
-      title: '5+ Active Digital Brands',
-      description: 'Building and scaling premium brands',
+      title: 'Crypto & Forex Expertise',
+      description: 'Mastering global markets with disciplined trading and high-conviction strategies.',
     },
     {
       icon: Code2,
@@ -59,7 +60,7 @@ export function AboutSection() {
             >
               <div className="relative overflow-hidden rounded-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1670881391783-9c55ba592f93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGFmcmljYW58ZW58MXx8fHwxNzY1Mjg0NjAyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="images\memoji3.png"
                   alt="Ayanda Vilakazi"
                   className="w-full h-[600px] object-cover"
                 />
@@ -84,11 +85,14 @@ export function AboutSection() {
               className="space-y-6"
             >
               <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-                <span className="text-[#005BFF] font-semibold">Ayanda Vilakazi</span> is a multidisciplinary product builder and founder of <span className="text-[#CBA135]">Vilatech</span>. He builds high-performance digital systems, premium websites, apps, AI-powered tools, and brand experiences.
+                <span className="text-[#005BFF] font-semibold">Ayanda Vilakazi</span> is a multidisciplinary product builder and founder of 
+                <span className="text-[#CBA135]"> Vilatech</span>. He builds high-performance digital systems, premium websites, 
+                apps, AI-powered tools, and brand experiences.
               </p>
               
               <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-                Known for world-class execution and relentless ambition, Ayanda continues to push African innovation forward.
+                Driven by relentless ambition and world-class execution, Ayanda is redefining African innovation, 
+                creating impactful products that set new standards for excellence.
               </p>
 
               <div className="pt-6">

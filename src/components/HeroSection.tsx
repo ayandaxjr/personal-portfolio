@@ -5,12 +5,12 @@ import { useEffect, useState } from 'react';
 export function HeroSection() {
   const [currentRole, setCurrentRole] = useState(0);
   const roles = [
-    'Software Developer',
-    'Product Architect',
-    'Founder of Vilatech',
-    'Digital Visionary',
-    'Creative Director',
-    'Business Systems Engineer',
+    'Web Developer',
+    'UI/UX Designer',
+    'CEO & Founder',
+    'Chief Technology Officer',
+    'Braintrust-Approved Talent',
+    'Web Designer',
   ];
 
   useEffect(() => {

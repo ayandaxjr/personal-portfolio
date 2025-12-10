@@ -1,14 +1,17 @@
 import { motion } from 'motion/react';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import Image from 'next/image';
+import { link } from 'fs';
 
 interface Project {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  image: string;
-  featured: boolean;
+  id: string;// Unique identifier for the project
+  title: string;// Title of the project
+  description: string;// Short description of the project
+  category: string;// Category or type of the project
+  image: string;// Image URL for the project
+  link: string;// Link to the project (if applicable)
+  featured: boolean;// Whether the project is featured or not
 }
 
 export function ProjectsSection() {
@@ -17,48 +20,54 @@ export function ProjectsSection() {
       id: '1',
       title: 'Lama Marketing',
       description: 'A performance-first marketing agency website & system.',
-      category: 'Web Development',
-      image: 'https://images.unsplash.com/photo-1669633760258-186e9dee81e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJrZXRpbmclMjBhZ2VuY3klMjBvZmZpY2V8ZW58MXx8fHwxNzY1Mjg0NjAwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      category: 'Marketing',
+      image: 'images/LAMA MARKETING.png',
+      link: 'https://www.lamamarketing.co.za/',
       featured: true,
     },
     {
       id: '2',
       title: 'Times Ten Workwear',
       description: 'Premium workwear brand + corporate clothing digital system.',
-      category: 'E-Commerce',
-      image: 'https://images.unsplash.com/photo-1614714053570-6c6b6aa54a6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwd29ya3dlYXIlMjBmYXNoaW9ufGVufDF8fHx8MTc2NTI4NDYwMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      category: 'Manufacturing',
+      image: 'images/Screenshot (112).png',
+      link: 'https://www.timestenworkwear.co.za/',
       featured: true,
     },
     {
       id: '3',
       title: 'Principal Equity',
-      description: 'Investment management platform with premium UX',
-      category: 'Fintech',
+      description: 'Investment management platform with premium UX (awaiting launch)',
+      category: 'Investment',
       image: 'https://images.unsplash.com/photo-1551135049-8a33b5883817?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGNvbnN1bHRpbmclMjBvZmZpY2V8ZW58MXx8fHwxNzY1MjI3OTAzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      featured: true,
+      link: '#',
+      featured: false,
     },
     {
       id: '4',
       title: '3 Way General',
-      description: 'Corporate services and logistics management system',
-      category: 'Enterprise',
+      description: 'Corporate services and logistics website (awaiting launch)',
+      category: 'Construction',
       image: 'https://images.unsplash.com/photo-1558181445-eca4774b2a37?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b3Jrc3BhY2UlMjBkZXZlbG9wZXJ8ZW58MXx8fHwxNzY1Mjg0NjAwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      link: '#',
       featured: false,
     },
     {
       id: '5',
       title: 'Gcwabe Fuel',
-      description: 'Fuel distribution and management platform',
-      category: 'Enterprise',
-      image: 'https://images.unsplash.com/photo-1551135049-8a33b5883817?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGNvbnN1bHRpbmclMjBvZmZpY2V8ZW58MXx8fHwxNzY1MjI3OTAzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      description: 'Fuel distribution and management website (awaiting launch)',
+      category: 'Petroleum',
+      image: 'images/photo_2025-12-10_19-58-05.jpg',
+      link:'#',
       featured: false,
     },
     {
       id: '6',
       title: 'AEGO Consulting',
-      description: 'Business consulting and advisory platform',
+      description: 'Business consulting and advisory website (awaiting launch)',
       category: 'Consulting',
       image: 'https://images.unsplash.com/photo-1551135049-8a33b5883817?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGNvbnN1bHRpbmclMjBvZmZpY2V8ZW58MXx8fHwxNzY1MjI3OTAzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      link: '#',
       featured: false,
     },
   ];
@@ -149,7 +158,7 @@ function ProjectCard({ project, index, large = false }: { project: Project; inde
 
             {/* Link Icon */}
             <div className="flex items-center gap-2 text-[#CBA135] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <span className="text-sm">View Project</span>
+              <a className="text-sm" href={project.link}>View Project</a>
               <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </div>
           </div>

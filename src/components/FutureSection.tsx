@@ -11,8 +11,8 @@ export function FutureSection() {
     },
     {
       icon: Smartphone,
-      title: 'BookSmart App',
-      description: 'Next-generation booking platform',
+      title: 'BookSmart',
+      description: 'For the students, by the students',
       color: '#CBA135',
     },
     {
