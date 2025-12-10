@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color Tokens - Ayanda Vilakazi Brand */
+  --color-brand-black: #000000;
+  --color-brand-white: #FFFFFF;
+  --color-electric-blue: #005BFF;
+  --color-gold-accent: #CBA135;
+  --color-soft-grey: #E7E7E7;
+
+  /* Typography - Premium Sans-Serif Stack */
+  --font-family-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-family-body: 'Inter', system-ui, sans-serif;
+}
+
+/* Global Styles */
+body {
+  font-family: var(--font-family-body);
+  background: var(--color-brand-black);
+  color: var(--color-brand-white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Import Space Grotesk */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-electric-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-accent);
+}
